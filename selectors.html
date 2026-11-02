@@ -1,0 +1,12 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Task 1</title><link rel="stylesheet" href="style.css"></head><body>
+<nav><a href="index.html">Home</a><a href="selectors.html">Task 1</a><a href="effects.html">Tasks 2–4</a><a href="dom.html">Tasks 5–7</a><a href="animations.html">Tasks 8–10</a><a href="mini-project.html">Task 11</a></nav>
+<main><h1>Task 1 — Selectors & CSS</h1><p id="byId">This paragraph is selected by ID.</p><p class="byClass">This paragraph is selected by class.</p><p>These paragraphs demonstrate tag selection.</p><p>Another tag-selected paragraph.</p>
+<button id="changeText">Change Text</button><button id="changeHtml">Change HTML</button><button id="changeCss">Change CSS</button></main>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script><script>
+$(document).ready(function(){
+ console.log("jQuery is ready!");
+ $("#changeText").click(function(){ $("#byId").text("Content changed with .text()"); });
+ $("#changeHtml").click(function(){ $(".byClass").html("<strong>HTML content changed with .html()</strong>"); });
+ $("#changeCss").click(function(){ $("p").css({"background":"#eef2ff","padding":"12px","border-radius":"10px"}); });
+});
+</script></body></html>

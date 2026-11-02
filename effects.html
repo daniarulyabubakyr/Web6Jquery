@@ -1,0 +1,13 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Tasks 2–4</title><link rel="stylesheet" href="style.css"></head><body>
+<nav><a href="index.html">Home</a><a href="selectors.html">Task 1</a><a href="effects.html">Tasks 2–4</a><a href="dom.html">Tasks 5–7</a><a href="animations.html">Tasks 8–10</a><a href="mini-project.html">Task 11</a></nav><main>
+<h1>Tasks 2–4 — jQuery Effects</h1>
+<section class="card"><h2>Task 2: Visibility</h2><p id="visibility">Hide, show and toggle this paragraph.</p><button id="hide">Hide</button><button id="show">Show</button><button id="toggle">Toggle</button></section>
+<section class="card"><h2>Task 3: Fade</h2><img id="fadeImg" class="effect-img" src="https://picsum.photos/id/1015/500/300" alt="Mountain"><br><button id="fadeIn">Fade In</button><button id="fadeOut">Fade Out</button><button id="fadeToggle">Fade Toggle</button></section>
+<section class="card"><h2>Task 4: Slide</h2><button id="slideToggle">Slide Toggle</button><div id="panel" class="panel">This panel opens and closes using slideUp(), slideDown() and slideToggle().</div><button id="slideUp">Slide Up</button><button id="slideDown">Slide Down</button></section>
+</main><script src="https://code.jquery.com/jquery-3.7.1.min.js"></script><script>
+$(document).ready(function(){
+ $("#hide").click(()=>$("#visibility").hide()); $("#show").click(()=>$("#visibility").show()); $("#toggle").click(()=>$("#visibility").toggle());
+ $("#fadeIn").click(()=>$("#fadeImg").fadeIn(600)); $("#fadeOut").click(()=>$("#fadeImg").fadeOut(600)); $("#fadeToggle").click(()=>$("#fadeImg").fadeToggle(600));
+ $("#slideUp").click(()=>$("#panel").slideUp(500)); $("#slideDown").click(()=>$("#panel").slideDown(500)); $("#slideToggle").click(()=>$("#panel").slideToggle(500));
+});
+</script></body></html>

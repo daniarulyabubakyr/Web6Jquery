@@ -1,0 +1,10 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Task 11</title><link rel="stylesheet" href="style.css"></head><body>
+<nav><a href="index.html">Home</a><a href="selectors.html">Task 1</a><a href="effects.html">Tasks 2–4</a><a href="dom.html">Tasks 5–7</a><a href="animations.html">Tasks 8–10</a><a href="mini-project.html">Task 11</a></nav><main><h1>Task 11 — Interactive Image Gallery</h1><p>Click a thumbnail to enlarge it. Thumbnails also fade in on page load.</p>
+<div class="gallery"><img class="thumb" src="https://picsum.photos/id/1015/500/300"><img class="thumb" src="https://picsum.photos/id/1025/500/300"><img class="thumb" src="https://picsum.photos/id/1035/500/300"></div>
+<div class="viewer"><img id="large" src="https://picsum.photos/id/1015/900/500"></div>
+</main><script src="https://code.jquery.com/jquery-3.7.1.min.js"></script><script>
+$(document).ready(function(){
+ $(".thumb").hide().each(function(i){$(this).delay(i*180).fadeIn(500)});
+ $(".thumb").click(function(){ $("#large").stop(true).fadeOut(150,function(){ $(this).attr("src",$(event.currentTarget).attr("src")).fadeIn(300); }); });
+});
+</script></body></html>

@@ -1,0 +1,14 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Tasks 5–7</title><link rel="stylesheet" href="style.css"></head><body>
+<nav><a href="index.html">Home</a><a href="selectors.html">Task 1</a><a href="effects.html">Tasks 2–4</a><a href="dom.html">Tasks 5–7</a><a href="animations.html">Tasks 8–10</a><a href="mini-project.html">Task 11</a></nav><main>
+<h1>Tasks 5–7 — DOM Manipulation</h1>
+<section class="card"><h2>Task 5: Add & Remove</h2><ul id="items"><li>Original item</li></ul><button id="append">Add Item</button><button id="prepend">Prepend Item</button><button id="remove">Remove Last</button></section>
+<section class="card"><h2>Task 6: Attributes</h2><img id="attrImg" class="small-img" src="https://picsum.photos/id/1025/300/180" alt="Dog"><br><button id="changeImg">Change Image src</button><p><a id="dynamicLink" href="https://jquery.com" target="_blank">Dynamic link</a></p><button id="changeLink">Change Link href</button></section>
+<section class="card"><h2>Task 7: Form Interaction</h2><form id="userForm"><input id="name" placeholder="Name"><input id="email" type="email" placeholder="Email"></form><p>Name: <span id="nameOut"></span></p><p>Email: <span id="emailOut"></span></p></section>
+</main><script src="https://code.jquery.com/jquery-3.7.1.min.js"></script><script>
+$(document).ready(function(){
+ let n=1; $("#append").click(()=>$("#items").append("<li>Appended item "+n+++"</li>")); $("#prepend").click(()=>$("#items").prepend("<li>Prepended item</li>")); $("#remove").click(()=>$("#items li:last").remove());
+ $("#changeImg").click(()=>$("#attrImg").attr("src","https://picsum.photos/id/1040/300/180"));
+ $("#changeLink").click(()=>$("#dynamicLink").attr("href","https://www.w3schools.com/jquery/").text("jQuery reference"));
+ $("#name").on("input",function(){$("#nameOut").text($(this).val())}); $("#email").on("input",function(){$("#emailOut").text($(this).val())});
+});
+</script></body></html>
